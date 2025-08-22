@@ -15,7 +15,7 @@ public class PortableCraftingResultSlot extends CraftingResultSlot {
     @Override
     public void onTakeItem(ItemStack stack) {
         this.playerEntity.getHand().damage(1, playerEntity);
-        if(this.playerEntity.getHand().getDamage() >= this.playerEntity.getHand().getMaxDamage()){
+        if(this.playerEntity.getHand().getMaxDamage() > 0 && this.playerEntity.getHand().getDamage() >= this.playerEntity.getHand().getMaxDamage()){
             this.playerEntity.inventory.main[this.playerEntity.inventory.selectedSlot] = null;
         }
         super.onTakeItem(stack);

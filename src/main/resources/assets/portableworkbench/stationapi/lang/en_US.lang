@@ -1,1 +1,4 @@
-# @ is a shorthand for the current mod id, which is portableworkbench. E.g: tile.@.redclay.name
+item.@.portable_workbench_wood.name=Wooden Portable Workbench
+item.@.portable_workbench_iron.name=Iron Portable Workbench
+item.@.portable_workbench_gold.name=Golden Portable Workbench
+item.@.portable_workbench_diamond.name=Diamond Portable Workbench

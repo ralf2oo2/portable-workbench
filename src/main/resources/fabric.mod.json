@@ -3,17 +3,16 @@
   "id": "portableworkbench",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Portable Workbench",
+  "description": "This mod adds portable workbenches to the game",
   "authors": [
-    "Me!"
+    "ralf2oo2"
   ],
   "contact": {
-    "homepage": "https://glass-launcher.net/",
-    "sources": "https://github.com/calmilamsy/stationapi-example-mod"
+    "sources": "https://github.com/ralf2oo2/portable-workbench"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/portableworkbench/icon.png",
 
   "environment": "*",
@@ -31,10 +30,6 @@
       "ralf2oo2.portableworkbench.compat.ami.AMIPlugin"
     ]
   },
-  "mixins": [
-    "portableworkbench.mixins.json"
-  ],
-
   "depends": {
     "minecraft": "1.0.0-beta.7.3"
   }
