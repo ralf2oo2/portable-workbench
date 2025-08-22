@@ -4,6 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.CraftingResultSlot;
+import ralf2oo2.portableworkbench.PortableWorkbenchConfig;
 
 public class PortableCraftingResultSlot extends CraftingResultSlot {
     PlayerEntity playerEntity;
@@ -14,9 +15,12 @@ public class PortableCraftingResultSlot extends CraftingResultSlot {
 
     @Override
     public void onTakeItem(ItemStack stack) {
-        this.playerEntity.getHand().damage(1, playerEntity);
-        if(this.playerEntity.getHand().getMaxDamage() > 0 && this.playerEntity.getHand().getDamage() >= this.playerEntity.getHand().getMaxDamage()){
-            this.playerEntity.inventory.main[this.playerEntity.inventory.selectedSlot] = null;
+
+        if(!PortableWorkbenchConfig.config.disableDurability && this.playerEntity.getHand().getMaxDamage() > 0){
+            this.playerEntity.getHand().damage(1, playerEntity);
+            if(this.playerEntity.getHand().getDamage() >= this.playerEntity.getHand().getMaxDamage()){
+                this.playerEntity.inventory.main[this.playerEntity.inventory.selectedSlot] = null;
+            }
         }
         super.onTakeItem(stack);
     }

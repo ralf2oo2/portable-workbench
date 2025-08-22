@@ -11,17 +11,16 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.CraftingResultSlot;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.world.World;
+import ralf2oo2.portableworkbench.item.PortableWorkbenchItem;
 import ralf2oo2.portableworkbench.screen.slot.PortableCraftingResultSlot;
 
 public class PortableWorkbenchScreenHandler extends ScreenHandler {
     public CraftingInventory input = new CraftingInventory(this, 3, 3);
     public Inventory result = new CraftingResultInventory();
     public World world;
-    public ItemStack portableWorkbenchItemStack;
 
     public PortableWorkbenchScreenHandler(PlayerInventory playerInventory, World world){
         this.world = world;
-        this.portableWorkbenchItemStack = playerInventory.player.getHand();
 
 
         this.addSlot(new PortableCraftingResultSlot(playerInventory.player, this.input, this.result, 0, 124, 35));
@@ -66,7 +65,10 @@ public class PortableWorkbenchScreenHandler extends ScreenHandler {
 
     @Override
     public boolean canUse(PlayerEntity player) {
-        return portableWorkbenchItemStack == player.getHand();
+        if(player.getHand() != null && player.getHand().getItem() instanceof PortableWorkbenchItem){
+            return true;
+        }
+        return false;
     }
 
     @Override

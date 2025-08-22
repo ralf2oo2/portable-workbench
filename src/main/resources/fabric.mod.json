@@ -19,15 +19,18 @@
   "entrypoints": {
     "stationapi:event_bus": [
       "ralf2oo2.portableworkbench.PortableWorkbench",
-      "ralf2oo2.portableworkbench.events.init.ItemListener",
-      "ralf2oo2.portableworkbench.events.init.GuiHandlerListener"
+      "ralf2oo2.portableworkbench.events.init.ItemListener"
     ],
     "stationapi:event_bus_client": [
+      "ralf2oo2.portableworkbench.events.init.GuiHandlerListener"
     ],
     "stationapi:event_bus_server": [
     ],
     "alwaysmoreitems:plugin": [
       "ralf2oo2.portableworkbench.compat.ami.AMIPlugin"
+    ],
+    "gcapi3": [
+      "ralf2oo2.portableworkbench.PortableWorkbenchConfig"
     ]
   },
   "depends": {
