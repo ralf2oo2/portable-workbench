@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "%s",
+  "id": "portableworkbench",
   "version": "${version}",
 
   "name": "Example Mod",
@@ -14,20 +14,25 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/%s/icon.png",
+  "icon": "assets/portableworkbench/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "stationapi:event_bus": [
-      "%s.events.init.InitListener"
+      "ralf2oo2.portableworkbench.PortableWorkbench",
+      "ralf2oo2.portableworkbench.events.init.ItemListener",
+      "ralf2oo2.portableworkbench.events.init.GuiHandlerListener"
     ],
     "stationapi:event_bus_client": [
     ],
     "stationapi:event_bus_server": [
+    ],
+    "alwaysmoreitems:plugin": [
+      "ralf2oo2.portableworkbench.compat.ami.AMIPlugin"
     ]
   },
   "mixins": [
-    "%s.mixins.json"
+    "portableworkbench.mixins.json"
   ],
 
   "depends": {
